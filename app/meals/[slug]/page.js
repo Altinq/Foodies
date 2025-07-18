@@ -3,8 +3,8 @@ import { getMeal } from "@/lib/meals.js";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
-export default function MealDetailsPage({ params }) {
-  const { slug } = params;
+export default async function MealDetailsPage({ params }) {
+  const { slug } = await params;
   const meal = getMeal(slug);
 
   if (!meal) {
